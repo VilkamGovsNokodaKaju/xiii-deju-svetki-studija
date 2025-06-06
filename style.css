@@ -1,0 +1,223 @@
+/* Reset some basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  background-color: #fafafa;
+  color: #222;
+}
+
+/* Header */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #444;
+  margin-left: 1.25rem;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: #000;
+}
+
+/* Hero */
+.hero {
+  background: url('https://via.placeholder.com/1200x400.png?text=Deju+Svētki+2025') no-repeat center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+/* Calendar Section */
+.calendar-section {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.calendar-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Make iframe responsive */
+.calendar-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.calendar-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Programmes Section */
+.programmes-section {
+  padding: 2rem 1.5rem;
+  background-color: #fdfdfd;
+}
+
+.programmes-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.programme-list {
+  list-style: none;
+}
+
+.programme-list li {
+  margin: 0.75rem 0;
+}
+
+.programme-list a {
+  text-decoration: none;
+  color: #0066cc;
+  font-size: 1.1rem;
+}
+
+.programme-list a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.site-footer a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.25rem;
+  }
+}
+
+/* … (your existing CSS above) … */
+
+/* ====== Programmes (updated) ====== */
+
+.programmes-section {
+  padding: 2rem 1.5rem;
+  background-color: #fdfdfd;
+}
+
+.programmes-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Style the <details> so it looks clean and minimal */
+.programme-details {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* The summary—the clickable header */
+.programme-details summary {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  background-color: #f5f5f5;
+  font-size: 1.1rem;
+  font-weight: 500;
+  list-style: none; /* Remove default triangle spacing on some browsers */
+}
+
+.programme-details summary:hover {
+  background-color: #eaeaea;
+}
+
+/* Remove default triangle on Firefox and use custom marker */
+.programme-details summary::-webkit-details-marker {
+  display: none;
+}
+.programme-details summary::marker {
+  content: '▸ '; /* Small arrow */
+  transition: transform 0.2s ease;
+}
+.programme-details[open] summary::marker {
+  transform: rotate(90deg);
+}
+
+/* The container for the embedded PDF */
+.pdf-container {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.pdf-container object {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
+
+/* Responsive tweak: if the screen is narrower, reduce the PDF height */
+@media (max-width: 600px) {
+  .pdf-container object {
+    height: 400px; 
+  }
+}

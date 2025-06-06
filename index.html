@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deju Troupes Mājaslapa – Dziesmu un Deju Festivāls 2025</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- =========================== Notifications Styles =========================== -->
+  <style>
+    #notifications {
+      background-color: #f2f9ff;
+      border-bottom: 1px solid #d0eaff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    #notifications h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #004a99;
+    }
+    #notifications p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    #notifications ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    #notifications li {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      background-color: #ffffff;
+      border: 1px solid #d0eaff;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #notifications li .date {
+      font-weight: 600;
+      color: #004a99;
+      margin-right: 1rem;
+      white-space: nowrap;
+    }
+    #notifications li .text {
+      flex: 1;
+      color: #333;
+    }
+    #no-notifs {
+      font-style: italic;
+      color: #666;
+      padding: 1rem;
+      border: 1px solid #d0eaff;
+      border-radius: 4px;
+      background-color: #ffffff;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+  <!-- ============================================================================ -->
+
+  <!-- ===================== Main Layout Styles ===================== -->
+  <style>
+    .trio-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 1rem;
+    }
+    .trio-item {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: visible;
+    }
+    .trio-item-header {
+      background-color: #f7f7f7;
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .trio-item-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #004a99;
+    }
+    .trio-content {
+      padding: 1rem;
+      overflow: visible;
+    }
+
+    /* ===== Calendar Box ===== */
+    .calendar-box .trio-content {
+      padding: 0;
+    }
+    .calendar-wrapper {
+      width: 100%;
+      /* Remove aspect-ratio to let iframe define its height */
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid #ccc;
+    }
+    .calendar-wrapper iframe {
+      width: 100%;
+      /* For desktop, use 600px; for mobile, 100vw */
+      height: 600px;
+      border: 0;
+    }
+    @media (max-width: 600px) {
+      .calendar-wrapper iframe {
+        height: 100vw; /* square on mobile */
+      }
+    }
+    .btn-add-calendar {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background-color: #0077cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .btn-add-calendar:hover {
+      background-color: #005fa3;
+    }
+
+    /* ===== Costumes Box ===== */
+    #costume-box .dance-item {
+      margin-bottom: 1rem;
+    }
+    #costume-box .dance-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .red   { color: #e63946; }
+    .blue  { color: #457b9d; }
+    .green { color: #2a9d8f; }
+    .dance-desc {
+      margin-left: 0.5rem;
+      color: #555;
+    }
+
+    /* ===== Programmes Box ===== */
+    .programmes-box .trio-content {
+      padding: 0;
+    }
+    .programme-details {
+      margin-bottom: 1.5rem;
+    }
+    .programme-details summary {
+      background-color: #f7f7f7;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .programme-details img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .trio-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <!-- ================================================================================ -->
+</head>
+<body>
+
+  <!-- ======================= Notifications ======================= -->
+  <section id="notifications">
+    <h2>Paziņojumi</h2>
+    <p>Visi gaidāmie paziņojumi — manuāli atjaunināmi šajā HTML.</p>
+    <ul id="notif-list">
+      <li id="no-notifs">Pašreiz nav gaidāmo paziņojumu.</li>
+    </ul>
+  </section>
+
+  <!-- ======================= Main Content ======================= -->
+  <section id="main-content">
+    <div class="trio-container">
+
+      <!-- ===== 1. Calendar Box ===== -->
+      <div class="trio-item calendar-box">
+        <div class="trio-item-header">
+          <h2>Šodienas Pasākumi</h2>
+          <a
+            href="https://calendar.google.com/calendar?cid=e4e78020c059abe49b74ae729b9fe4207fdc1b1703913dc0250a5037ccbf4f4f@group.calendar.google.com"
+            target="_blank"
+            class="btn-add-calendar"
+          >
+            Pievienot kalendāram
+          </a>
+        </div>
+        <div class="trio-content">
+          <div class="calendar-wrapper">
+            <iframe
+              id="todayCalendarFrame"
+              src=""
+              scrolling="no"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 2. Costumes Box ===== -->
+      <div class="trio-item" id="costume-box">
+        <div class="trio-item-header">
+          <h2>Tērpi</h2>
+        </div>
+        <div class="trio-content">
+          <div class="dance-item">
+            <div class="red">Pastorāle</div>
+            <div class="dance-desc">
+              Balta blūze ar sarkaniem rakstiem, tumši zils svārks, sarkans josta. Apavi ar sarkanu lentīti.
+            </div>
+          </div>
+          <div class="dance-item">
+            <div class="blue">Sigulda</div>
+            <div class="dance-desc">
+              Zila blūze ar baltu izšuvumu, gaiši pelēki svārki, sudraba rotas. Apavi melni, sudraba lentīte.
+            </div>
+          </div>
+          <div class="dance-item">
+            <div class="green">Cecmīša</div>
+            <div class="dance-desc">
+              Zaļa žakete ar zelta pogām, balti svārki ar zaļu malu, melni zābaki. Cepure ar zelta lentēm.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 3. Programmes Box ===== -->
+      <div class="trio-item programmes-box">
+        <div class="trio-item-header">
+          <h2>Programmas</h2>
+        </div>
+        <div class="trio-content">
+          <!-- Viedvasara -->
+          <details class="programme-details">
+            <summary>📷 Viedvasara</summary>
+            <img src="assets/programmes/viedvasara.jpg" alt="Viedvasara Programme" />
+          </details>
+
+          <!-- Es atvēru Laimas dārzu -->
+          <details class="programme-details">
+            <summary>📷 Es atvēru Laimas dārzu</summary>
+            <img src="assets/programmes/eald.jpg" alt="Es atvēru Laimas dārzu Programme" />
+          </details>
+
+          <!-- TE-AUST -->
+          <details class="programme-details">
+            <summary>📷 TE-AUST</summary>
+            <img src="assets/programmes/te-aust.jpg" alt="TE-AUST Programme" />
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================= Footer ============================= -->
+  <footer id="contact" class="site-footer">
+    <p>
+      Sazinieties ar mums:
+      <a href="mailto:info@dance-troupe.lv">info@dance-troupe.lv</a><br />
+      © 2025 Mūsu Deju Troupe
+    </p>
+  </footer>
+
+  <!-- ===================== Today’s Calendar Initialization Script ===================== -->
+  <script>
+    (function() {
+      const calId = 'e4e78020c059abe49b74ae729b9fe4207fdc1b1703913dc0250a5037ccbf4f4f@group.calendar.google.com';
+
+      // Compute today’s and tomorrow’s dates in YYYYMMDD format
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      const startYMD = `${yyyy}${mm}${dd}`;
+
+      const tmrw = new Date(now.getTime() + 86400000);
+      const yyyy2 = tmrw.getFullYear();
+      const mm2 = String(tmrw.getMonth() + 1).padStart(2, '0');
+      const dd2 = String(tmrw.getDate()).padStart(2, '0');
+      const endYMD = `${yyyy2}${mm2}${dd2}`;
+
+      const iframe = document.getElementById('todayCalendarFrame');
+      const srcUrl =
+        'https://calendar.google.com/calendar/embed' +
+        '?src=' + encodeURIComponent(calId) +
+        '&ctz=Europe%2FRiga' +
+        '&mode=AGENDA' +
+        '&dates=' + startYMD + '/' + endYMD;
+      iframe.src = srcUrl;
+    })();
+  </script>
+</body>
+</html>
