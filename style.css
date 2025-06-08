@@ -189,7 +189,8 @@ html {
 }
 
 .programme-details summary:hover {
-  background-color: #ffac07;
+  background-color: #0077cc;
+  color: white;
   transition: all 200ms;
 }
 
