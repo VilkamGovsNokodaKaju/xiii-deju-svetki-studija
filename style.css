@@ -189,7 +189,8 @@ html {
 }
 
 .programme-details summary:hover {
-  background-color: #eaeaea;
+  background-color: #ffac07;
+  transition: all 200ms;
 }
 
 /* Remove default triangle on Firefox and use custom marker */

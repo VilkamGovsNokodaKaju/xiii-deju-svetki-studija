@@ -131,7 +131,8 @@
       font-weight: 500;
     }
     .btn-add-calendar:hover {
-      background-color: #005fa3;
+      background-color: #ffac07;
+	  transition: all 200ms;
     }
 
     /* ===== Costumes Box ===== */
@@ -176,12 +177,6 @@
 </head>
 <body>
 
-  <!-- ======================= Notifications ======================= -->
-  <section id="notifications">
-    <ul id="notif-list">
-      <li id="no-notifs">Pašreiz nav gaidāmo paziņojumu.</li>
-    </ul>
-  </section>
 
   <!-- ======================= Main Content ======================= -->
   <section id="main-content">
@@ -242,12 +237,35 @@
 
 
       <!-- ===== 2. Costumes Box ===== -->
-      <div class="trio-item" id="costume-box">
+       <div class="trio-item programmes-box">
         <div class="trio-item-header">
           <h2>Tērpi</h2>
+		  <a
+            href="https://docs.google.com/spreadsheets/d/1P9RIYPdw6-4qW8N50wpr8tsjWhAfghCNgDoRyVOi6tY/edit?usp=sharing"
+            target="_blank"
+            class="btn-add-calendar"
+          >
+            Google sheets
+          </a>
         </div>
         <div class="trio-content">
-          <p>te bus terpu info</p>
+          <!-- Viedvasara -->
+          <details class="programme-details">
+            <summary>💃 Viedvasara</summary>
+            <img src="assets/costumes/viedvasara-t.png" alt="Viedvasara tērpi" />
+          </details>
+
+          <!-- Es atvēru Laimas dārzu -->
+          <details class="programme-details">
+            <summary>💃 Es atvēru Laimas dārzu</summary>
+            <img src="assets/costumes/eald-t.png" alt="Es atvēru Laimas dārzu tērpi" />
+          </details>
+
+          <!-- TE-AUST -->
+          <details class="programme-details">
+            <summary>💃 TE-AUST</summary>
+            <img src="assets/costumes/te-aust-t.png" alt="TE-AUST tērpi" />
+          </details>
         </div>
       </div>
 
